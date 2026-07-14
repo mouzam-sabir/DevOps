@@ -185,7 +185,7 @@ top
 ```
 - Live Process list with colors and also U can kill a process directly
 ```
-top
+htop
 ```
 - Sumamry of the Memory + CPU + swap memory
 ```
