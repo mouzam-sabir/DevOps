@@ -61,6 +61,22 @@ git diff --staged
 ```bash 
 git log
 ```
+- Checking specific person commit
+```bash 
+git log --author="name"
+```
+- Checking line by line commit
+```bash 
+git blame filename
+```
+- Make a new commit but don't delete old history
+```bash 
+git revert SHA
+```
+- Untracked files deletion 
+```bash 
+git clean -fd
+```
 ---
 # Branching
 - Branches List and to check current branch
@@ -144,7 +160,80 @@ git fetch origin "url"
 git merge origin/branchname
 ```
 ---
-
+# Undo Tools
+- Undo Commits (Changes remain in staged state)
+```bash 
+git reset -- soft HEAD~1
+```
+- Undo Commits (Changes also unstaged)
+```bash 
+git reset --mixed HEAD~1
+```
+- Undo Commits (Changes deleted permanently)
+```bash 
+git reset --hard HEAD~1
+```
+- For complete history (including undo commits)
+```bash 
+git reflog
+```
+- Pending task ko temporarily side pe karna
+```bash 
+git stash
+```
+- Pending tasks list
+```bash 
+git stash list
+```
+- Task ko wapis lana
+```bash 
+git stash pop
+```
+- Temporary aside task ko delete karna
+```bash 
+git stash drop
+```
+---
+# File Management
+- File delete + Stage
+```bash 
+git rm filename
+```
+- File rename + move and stage
+```bash 
+git mv oldfilename newfilename
+```
+- Forcing no file tracking
+```bash 
+.gitignore filename
+```
+- Forcing no system-wide file tracking
+```bash 
+git config --global core.excludesfile filename
+```
+---
+# Inspection (Check History)
+- Show commit history
+```bash 
+git log
+```
+- Show commit history (Shortly)
+```bash 
+git log --oneline
+```
+- Show visual graph of branches
+```bash 
+git log --oneline --graph --all
+```
+- Compare two branches (branchA me kya extra hai jo branchB me nahi)
+```bash 
+git log branchB..branchA
+```
+- File history
+```bash 
+git log --follow filename
+```
+---
 # IMPORTANT
 
 - -u (LINK THE BRANCH WITH THE URL)
