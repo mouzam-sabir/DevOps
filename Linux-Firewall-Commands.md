@@ -77,5 +77,22 @@ sudo ufw default deny outgoing
 ```
 sudo tail -f /var/log/ufw.log
 ```
+--- 
+# Set Rules
 
-
+- Add new rule in Firewall
+```
+iptables -A INPUT -s ip -j ACCEPT
+```
+- Delete a Firewall rule
+```
+iptables -D INPUUT -s ip -j ACCEPT
+```
+- Block All incoming traffic by default
+```
+iptables -P INPUT DROP
+```
+- Remove all firewall rules
+```
+iptables -F INPUT
+```
